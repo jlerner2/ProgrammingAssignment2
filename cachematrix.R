@@ -1,17 +1,27 @@
 ## Author: Jeremy Lerner
-## These functions make and save a matrix in a special data type that holds the matrix and its inverse
+## These functions make and save a matrix 
+## and its inverse in a list
 
-## Create a special data type that holds a matrix and its inverse
+## Create a list that holds a matrix and its inverse
+## input:
+##          x: an invertible matrix
+## output:
+##          a list that contains, on which the 
+##          following functions can be run:
+##          get(): returns the matrix
+##          set(x2): sets the matrix in the list to be x2
+##          getInv(): returns the inverse of the matrix
+##          setInv(num): records the inverse of the matrix to be num
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
-    # Overwrite the matrix
+    # Overwrite the matrix, setting it to y
     set <- function(y) {
         x <<- y
         m <<- NULL
     }
     # Return the matrix
     get <- function() x
-    # Set the inverse
+    # Set the inverse to Inv
     setInv <- function(Inv) m <<- Inv
     # Return the inverse
     getInv <- function() m
@@ -21,7 +31,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## If the cache matrix has an inverse already, return it, otherwise calculate it, then return it
+## If the cache matrix has an inverse already, 
+## return it, otherwise calculate it, then return it
+## input:
+##          x: the matrix to find the inverse of
+## output:
+##          m: the inverse of matrix x
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     m <- x$getInv()
