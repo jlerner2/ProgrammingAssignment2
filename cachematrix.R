@@ -1,8 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Author: Jeremy Lerner
+## These functions make and save a matrix in a special data type that holds the matrix and its inverse
 
-## Write a short comment describing this function
-
+## Create a special data type that holds a matrix and its inverse
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
     # Overwrite the matrix
@@ -22,8 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## If the cache matrix has an inverse already, return it, otherwise calculate it, then return it
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     m <- x$getInv()
